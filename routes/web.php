@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tecnicos', 'TecnicoController@index');
+Route::get('/tecnicos/create', 'TecnicoController@create');
+
+Route::post('/tecnicos', 'TecnicoController@store');

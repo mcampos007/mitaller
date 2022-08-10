@@ -7,12 +7,12 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="{{ url('/trabajos')}}">
       <i class="ni ni-planet text-blue"></i> Trabajos
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./examples/maps.html">
+    <a class="nav-link" href=" {{ url('/tecnicos')}}">
       <i class="ni ni-single-02 text-orange"></i> Técnicos
     </a>
   </li>
