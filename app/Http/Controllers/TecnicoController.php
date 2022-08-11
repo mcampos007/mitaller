@@ -108,8 +108,8 @@ class TecnicoController extends Controller
             'name.required' => 'Es necesario ingresar un nombre',
             'name.min' => 'El nombre debe tener al menos 3 caracteres'
         ];
-        // $this->validate($request, $rules, $messages);
-        $tecnico = new Tecnico;
+         $this->validate($request, $rules, $messages);
+        // $tecnico = new Tecnico;
 
         $tecnico->name = $request->input('name');
         $tecnico->description = $request->input('description');
