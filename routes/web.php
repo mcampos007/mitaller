@@ -24,4 +24,4 @@ Route::get('/tecnicos/create', 'TecnicoController@create');
 Route::get('/tecnicos/{tecnico}/edit', 'TecnicoController@edit');
 
 Route::post('/tecnicos', 'TecnicoController@store');
-Route::put('/tecnicos', 'TecnicoController@update');
+Route::put('/tecnicos/{tecnico}', 'TecnicoController@update');

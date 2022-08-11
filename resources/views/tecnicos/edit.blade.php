@@ -23,9 +23,10 @@
               @endforeach
           </div>
       @endif  
-      <form action=" {{ url('tecnicos/',$tecnico->id)}}" method="POST">
+      <form action=" {{ url('tecnicos/'.$tecnico->id) }}" method="POST">
         @csrf
         @method('PUT')
+
         <div class="form-group">
             <label for="name">Nombre del Técnico</label>
             <input type="text" name="name" class="form-control" value="{{old('name', $tecnico->name)}}" required>
