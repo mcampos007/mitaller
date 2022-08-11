@@ -13,15 +13,25 @@
     </div>
   </div>
   <div class="card-body">
+      @if($errors->any())
+          <div class="text-center text-muted mb-4">
+              <small>Oops ! Se encontraron un errorres.</small>
+          </div>
+          <div class="alert alert-danger" role="alert">
+              @foreach($errors->all() as $error)
+                <li><strong>Error!</strong> {{ $error}}</li>
+              @endforeach
+          </div>
+      @endif  
       <form action=" {{ url('tecnicos')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Nombre del Técnico</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" value="{{old('name')}}" required>
         </div>
         <div class="form-group">
             <label for="description">Descripción del técnico</label>
-            <input type="text" name="description" class="form-control">
+            <input type="text" name="description" class="form-control" value="{{old('description')}}" >
         </div>    
          <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
