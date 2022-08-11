@@ -35,7 +35,7 @@
             {{$tecnico->description}}
           </td>
           <td>
-            <a href="" class="btn btn-sm btn-primary">Editar </a>
+            <a href="{{ url('tecnicos/'.$tecnico->id.'/edit')}}" class="btn btn-sm btn-primary">Editar </a>
             <a href="" class="btn btn-sm btn-danger">Eliminar </a>
           </td>
         </tr>

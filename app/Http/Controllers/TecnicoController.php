@@ -86,6 +86,7 @@ class TecnicoController extends Controller
     public function edit(Tecnico $tecnico)
     {
         //
+        return view('tecnicos.edit', compact('tecnico'));
         
     }
 
@@ -99,6 +100,23 @@ class TecnicoController extends Controller
     public function update(Request $request, Tecnico $tecnico)
     {
         //
+        $rules = [
+            'name' => 'required|min:3'
+        ];
+
+        $messages= [
+            'name.required' => 'Es necesario ingresar un nombre',
+            'name.min' => 'El nombre debe tener al menos 3 caracteres'
+        ];
+        // $this->validate($request, $rules, $messages);
+        $tecnico = new Tecnico;
+
+        $tecnico->name = $request->input('name');
+        $tecnico->description = $request->input('description');
+
+        $tecnico->save();
+
+        return redirect('/tecnicos');
     }
 
     /**
