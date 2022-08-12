@@ -25,3 +25,4 @@ Route::get('/tecnicos/{tecnico}/edit', 'TecnicoController@edit');
 
 Route::post('/tecnicos', 'TecnicoController@store');
 Route::put('/tecnicos/{tecnico}', 'TecnicoController@update');
+Route::delete('/tecnicos/{tecnico}', 'TecnicoController@destroy');

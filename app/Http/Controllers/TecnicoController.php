@@ -128,5 +128,7 @@ class TecnicoController extends Controller
     public function destroy(Tecnico $tecnico)
     {
         //
+        $tecnico->delete();
+        return redirect('/tecnicos');
     }
 }
