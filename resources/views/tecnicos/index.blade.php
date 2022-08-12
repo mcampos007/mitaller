@@ -15,6 +15,14 @@
       </div>
     </div>
   </div>
+    <div class="card-body">
+    @if (session('notification'))
+      <div class="alert alert-success" role="alert">
+          <strong>{{ session('notification') }}</strong> 
+      </div>
+    @endif  
+  </div>
+  
   <div class="table-responsive">
     <!-- Projects table -->
     <table class="table align-items-center table-flush">

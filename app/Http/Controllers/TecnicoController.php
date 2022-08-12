@@ -62,7 +62,8 @@ class TecnicoController extends Controller
 
         $tecnico->save();
 
-        return redirect('/tecnicos');
+        $notification = "Se registró correctamente el nuevo técnico";
+        return redirect('/tecnicos')->with(compact('notification'));
 
     }
 
@@ -116,7 +117,8 @@ class TecnicoController extends Controller
 
         $tecnico->save();
 
-        return redirect('/tecnicos');
+        $notification ="Los datos del Técnico se han actualizado correctamente.";
+        return redirect('/tecnicos')->with(compact('notification'));
     }
 
     /**
@@ -128,7 +130,9 @@ class TecnicoController extends Controller
     public function destroy(Tecnico $tecnico)
     {
         //
+        $TecnicoDeleted = $tecnico->name;
         $tecnico->delete();
-        return redirect('/tecnicos');
+        $notification = "Los datos del Técnico: ".$TecnicoDeleted." Han sido eliminados Correctamente.";
+        return redirect('/tecnicos')->with(compact('notification'));
     }
 }
