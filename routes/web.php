@@ -18,11 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/tecnicos', 'TecnicoController@index');
 Route::get('/tecnicos/create', 'TecnicoController@create');
 Route::get('/tecnicos/{tecnico}/edit', 'TecnicoController@edit');
-
 Route::post('/tecnicos', 'TecnicoController@store');
 Route::put('/tecnicos/{tecnico}', 'TecnicoController@update');
 Route::delete('/tecnicos/{tecnico}', 'TecnicoController@destroy');
+
+//Clientes
+Route::resource('clientes','ClienteController');
+
+//Empleados
+Route::resource('empleados','EmpleadoController');

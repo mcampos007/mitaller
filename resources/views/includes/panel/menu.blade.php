@@ -17,7 +17,12 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./examples/profile.html">
+    <a class="nav-link" href=" {{ url('/empleados')}}">
+      <i class="ni ni-single-02 text-orange"></i> Empleados
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url('/clientes')}}">
       <i class="ni ni-satisfied  text-info"></i> Clientes
     </a>
   </li>
