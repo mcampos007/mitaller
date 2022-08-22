@@ -22,7 +22,8 @@ class TecnicoController extends Controller
     public function index()
     {
         //
-        $tecnicos = Tecnico::all();
+        //$tecnicos = Tecnico::all();
+        $tecnicos = Tecnico::paginate(5);
         return view('tecnicos.index',compact('tecnicos'));
     }
 
@@ -47,12 +48,15 @@ class TecnicoController extends Controller
     {
         //
         $rules = [
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
+            'description' => 'required|min:3'
         ];
 
         $messages= [
             'name.required' => 'Es necesario ingresar un nombre',
-            'name.min' => 'El nombre debe tener al menos 3 caracteres'
+            'name.min' => 'El nombre debe tener al menos 3 caracteres',
+            'description,required' => 'Es necesario ingresar una descripcion',
+            'description,min' => 'La descripción debe tener al menos 3 caracteres.'
         ];
         $this->validate($request, $rules, $messages);
         $tecnico = new Tecnico;

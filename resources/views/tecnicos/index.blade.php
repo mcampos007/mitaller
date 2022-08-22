@@ -56,6 +56,9 @@
       </tbody>
     </table>
   </div>
+  <div class="card-body">
+    {{ $tecnicos->links() }}
+  </div>
 </div>
 @endsection
 

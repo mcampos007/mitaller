@@ -15,7 +15,8 @@ class ClienteController extends Controller
     public function index()
     {
         //
-        $clientes = User::clientes()->get();
+       // $clientes = User::clientes()->get();
+         $clientes = User::clientes()->paginate(10);
         return view('clientes.index',compact('clientes'));
     }
 
@@ -131,8 +132,15 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $cliente)
     {
         //
+        $clientName = $cliente->name;
+
+        $cliente->delete();
+
+        $notification = "El cliente $clientName se ha eliminado correctamente.";
+
+        return redirect('/clientes')->with(compact('notification'));
     }
 }
